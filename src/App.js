@@ -14,6 +14,9 @@ import {
 const CHAIN_PROVIDER = 'https://eth-sepolia.g.alchemy.com/v2/KfxK8ZFXw9mTUuJ7jt751xGJCa3r8noZ';
 const CHAIN = "sepolia";
 
+const CAPSULE_API_KEY = undefined
+const capsule = new Capsule(Environment.BETA, CAPSULE_API_KEY);
+
 const styles = {
   baseContainer: {
     display: "flex",
@@ -21,15 +24,14 @@ const styles = {
     alignItems: "center",
     height: "100vh",
     flexDirection: "column",
+    overflowWrap: "anywhere",
   },
 };
+
 function App() {
   const [signer, setSigner] = useState(null);
   const [currentWalletAddress, setCurrentWalletAddress] = useState(null);
   const [signedMessage, setSignedMessage] = useState(null);
-
-  const CAPSULE_API_KEY = undefined
-  const capsule = new Capsule(Environment.BETA, CAPSULE_API_KEY);
 
   const logout = async () => {
     await capsule.logout();
@@ -70,10 +72,10 @@ function App() {
   return (
     <div className="App">
       <div style={styles.baseContainer}>
-        <h1>Welcome to the Capsule PWA Example</h1>
+        <h1>Welcome to the Capsule PWA Example!</h1>
         <p>This example walks through creating a wallet and signing a message from an address, as well as creating ethers and viem signers for the account</p>
         {!signer && (
-          <div style={styles.baseContainer}>
+          <div>
             <CapsuleButton
               capsule={capsule}
               appName={"Capsule PWA Example"}
@@ -81,7 +83,7 @@ function App() {
           </div>
         )}
         {signer && (
-          <div style={styles.baseContainer}>
+          <div>
             <div>
               <p>{`Current Address: ${currentWalletAddress}`}</p>
             </div>
@@ -89,7 +91,7 @@ function App() {
               <button onClick={signTestMessage}>{signedMessage ? "Success!" : "Sign Message from Address"}</button>
             </div>
             <div>
-              {signedMessage && (<p>{signedMessage}</p>)}
+              <p>{signedMessage && `Signed Message: ${signedMessage}`}</p>
             </div>
             <div>
               <button onClick={logout}>Logout</button>
