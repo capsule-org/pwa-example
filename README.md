@@ -6,6 +6,8 @@ This example does the following
 - Signs a simple message with the new wallet's private key using the `signMessage` method on the signer
 
 ## Setup
+First, fill out [this form](https://form.typeform.com/to/hLaJeYJW) to get added to the Capsule SDK
+
 To run the Capsule PWA example locally, you'll need to run the following:
 ```bash
 yarn
