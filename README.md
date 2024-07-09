@@ -1,3 +1,13 @@
+# ⚠️ This Repository is Archived
+
+**This example repository is no longer maintained and has been archived.**
+
+For up-to-date examples and integration guides, please visit our official documentation:
+
+[Capsule Examples and Integration Guides](https://docs.usecapsule.com/getting-started/examples)
+
+Thank you for your interest in Capsule! We're constantly working to improve our documentation and examples to provide you with the best possible integration experience.
+
 # Capsule PWA Example
 
 This example does the following
